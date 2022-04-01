@@ -14,6 +14,4 @@ export class CarComponent implements OnInit {
   ngOnInit() {
     
   }
-
-  title = 'carsales-nosql';
 }

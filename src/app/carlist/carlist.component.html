@@ -1,24 +1,39 @@
 <!--<button (click)="show = !show">{{show ? 'Hide' : 'Add a Car'}}</button>
 
 <div *ngIf="show">-->
-    <form>
-        <label>Make</label>
-        <input type="text" name="make" placeholder="Enter Make" #make>
-
-        <label>Model</label>
-        <input type="text" name="model" placeholder="Enter Model" #model>
-        
-        <label>Year</label>
-        <input type="text" name="year" placeholder="Enter Year" #year>
-        
-        <label>Image</label>
-        <input type="text" name="imageURL" placeholder="Enter Link to Image" #imageURL>
-        
-        <button type="submit" (click)="addTheCar(
+<body class="bg-dark text-light" style="min-width: 445px;">
+    <h1 class="text-center text-danger">DonegalDeal</h1>
+    <form class="m-5">
+    <div class="row">
+    <div class="col">
+        <label class="form-label">Make</label>
+        <input class="form-control" type="text" name="make" placeholder="Enter Make" required #make>
+    </div>
+    <div class="col">
+        <label class="form-label">Model</label>
+        <input class="form-control" type="text" name="model" placeholder="Enter Model" required #model>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+        <label class="form-label">Year</label>
+        <input class="form-control" type="text" name="year" placeholder="Enter Year" required #year>
+    </div>
+    <div class="col">
+        <label class="form-label">Image</label>
+        <input class="form-control" type="text" name="imageURL" placeholder="Enter Link to Image" #imageURL>
+    </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+        <button class="btn btn-primary mt-4 w-25" type="submit" (click)="addTheCar(
             make.value, model.value,year.value,imageURL.value)"
         >Add the Car</button>
+    </div>
+    </div>
     </form>
 <!--</div>-->
 <div class="container">
     <app-car *ngFor="let carData of carsData" [carData]="carData"></app-car>
 </div>
+</body>
