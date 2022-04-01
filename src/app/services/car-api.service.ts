@@ -24,7 +24,7 @@ export class CarApiService {
     }
 
     getCarData():Observable<ICar[]> {
-      this.carsData = this.carsDataCollection.valueChanges();
+      this.carsData = this.carsDataCollection.valueChanges({idField:'id'});
       this.carsData.subscribe(
         data => console.log("getCarsData:" + JSON.stringify(data))
       )
@@ -36,6 +36,10 @@ export class CarApiService {
     private handleError (err:HttpErrorResponse) {
       console.log('CarAPIService: ' + err.message);
       return throwError(err.message);
-
+    }
+    delCarData(carId:string):void
+    {
+      console.log(this.carsDataCollection.doc(carId));
+      this.carsDataCollection.doc(carId).delete();
     }
 }

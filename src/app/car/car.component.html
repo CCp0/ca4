@@ -13,6 +13,9 @@
   <div class="col-4">
     <img src="{{carData.imageURL}}" [style.width.px]="carImageWidth"/>
   </div>
+  <div>
+    <button type="submit" (click)="deleteCar(carData.id)">Delete Car</button>
+  </div>
   </div>
 </div>
 </html>
