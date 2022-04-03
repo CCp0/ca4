@@ -8,7 +8,7 @@ import { CarApiService } from '../services/car-api.service';
 })
 export class CarComponent implements OnInit {
   @Input() carData!:ICar;
-  carImageWidth:number=300;
+  //carImageWidth:number=300;
 
   constructor(private _carAPIService:CarApiService) { }
 

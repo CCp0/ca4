@@ -11,10 +11,10 @@
     {{carData.year}}
   </div>
   <div class="col-4">
-    <img src="{{carData.imageURL}}" [style.width.px]="carImageWidth"/>
+    <img class="w-100" src="{{carData.imageURL}}"/>
   </div>
-  <div>
-    <button type="submit" (click)="deleteCar(carData.id)">Delete Car</button>
+  <div style="width: 4em;">
+    <button type="submit" (click)="deleteCar(carData.id)"><img src="https://www.kindpng.com/picc/m/296-2961763_trash-icon-png-rubbish-white-bin-transparent-png.png" class="w-100"></button>
   </div>
   </div>
 </div>

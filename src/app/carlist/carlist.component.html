@@ -3,28 +3,27 @@
 <div *ngIf="show">-->
 <body class="bg-dark text-light" style="min-width: 550px;">
     <h1 class="text-center text-danger">DonegalDeal</h1>
-    <form class="m-5">
-    <div class="row">
-    <div class="col">
+    <h2 class="text-center">Chris Curran - S00210475</h2>
+    <form class="m-5 container mx-auto d-block text-center">
+    <div class="row justify-content-center">
+    <div class="col-4">
         <label class="form-label">Make</label>
         <input class="form-control" type="text" name="make" placeholder="Enter Make" required #make>
     </div>
-    <div class="col">
+    <div class="col-4">
         <label class="form-label">Model</label>
         <input class="form-control" type="text" name="model" placeholder="Enter Model" required #model>
     </div>
-    </div>
-    <div class="row">
-    <div class="col">
+    <div class="col-4">
         <label class="form-label">Year</label>
         <input class="form-control" type="text" name="year" placeholder="Enter Year" required #year>
     </div>
-    <div class="col">
-        <label class="form-label">Image</label>
+    <div class="row justify-content-center">
+        <div class="col-4">
+        <label class="form-label">Image Link</label>
         <input class="form-control" type="text" name="imageURL" placeholder="Enter Link to Image" #imageURL>
     </div>
     </div>
-    <div class="row text-center">
         <div class="col">
         <button class="btn btn-primary mt-4 w-25" type="submit" (click)="addTheCar(
             make.value, model.value,year.value,imageURL.value)"
