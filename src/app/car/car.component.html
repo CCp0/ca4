@@ -1,8 +1,8 @@
 <html>
-<div class="container">
+<div class="container" id="carCard">
  <div class="row border">
-   <div class="col-3">
-     {{carData.make}} {{carData.model}}
+   <div class="col-3" id="carMake">
+     <p #carMake>{{carData.make}}  {{carData.model}}</p>
    </div>
    <div class="col-3">
     {{carData.carReg}}
@@ -15,6 +15,9 @@
   </div>
   <div style="width: 4em;">
     <button type="submit" (click)="deleteCar(carData.id)"><img src="https://www.kindpng.com/picc/m/296-2961763_trash-icon-png-rubbish-white-bin-transparent-png.png" class="w-100"></button>
+  </div>
+  <div style="width: 4em;">
+    <button type="submit" (click)="editCar(carData.id)">Edit</button>
   </div>
   </div>
 </div>

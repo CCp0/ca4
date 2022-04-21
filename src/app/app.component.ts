@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+declare function searchCar():void;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

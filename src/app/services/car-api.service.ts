@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+
 import { ICar } from "../interfaces/car";
 
 @Injectable({
@@ -30,6 +31,13 @@ export class CarApiService {
       )
       return this.carsData;
     }
+    getMoreCarData():Observable<ICar[]> {
+      this.carsData = this.carsDataCollection.valueChanges({idField:'id'});
+      this.carsData.subscribe(
+        data => console.log("getCarsData:" + JSON.stringify(data))
+      )
+      return this.carsData;
+    }
     addCarData(car:ICar): void {
       this.carsDataCollection.add(JSON.parse(JSON.stringify(car)));
     }
@@ -41,5 +49,10 @@ export class CarApiService {
     {
       console.log(this.carsDataCollection.doc(carId));
       this.carsDataCollection.doc(carId).delete();
+    }
+    editCarData(carId:string):void
+    {
+      console.log(this.carsDataCollection.doc(carId));
+      //this.carsDataCollection.doc(carId).update();
     }
 }
